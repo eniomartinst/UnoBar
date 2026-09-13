@@ -1,0 +1,45 @@
+name: uno
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: uno_db
+    restart: always
+    environment:
+      POSTGRES_USER: uno
+      POSTGRES_PASSWORD: uno
+      POSTGRES_DB: unodb
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build: ./UnoApi
+    container_name: uno_api
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./UnoApi:/usr/src/app
+      - /usr/src/app/node_modules 
+    depends_on:
+      - db
+    env_file:
+      - ./UnoApi/.env
+
+  front:
+    build: ./UnoFront
+    container_name: uno_front
+    restart: always
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./UnoFront:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+
+volumes:
+  pgdata:
