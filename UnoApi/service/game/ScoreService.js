@@ -1,7 +1,7 @@
-import Score from '../repository/Score.js';
-import Game from '../repository/Game.js';
-import User from '../repository/User.js';
-import NotFoundException from '../config/exceptions/NotFoundException.js';
+import Score from '../../repository/Score.js';
+import Game from '../../repository/Game.js';
+import User from '../../repository/User.js';
+import NotFoundException from '../../config/exceptions/NotFoundException.js';
 
 class ScoreService {
   // ─── CRUD base ─────────────────────────────────────────────────────────────
@@ -75,4 +75,4 @@ class ScoreService {
   }
 }
 
-export default new ScoreService();
+export default new ScoreService();
