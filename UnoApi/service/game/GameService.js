@@ -1,10 +1,10 @@
 import jwt from 'jsonwebtoken';
-import Game from '../repository/Game.js';
-import User from '../repository/User.js';
-import Round from '../repository/Round.js';
-import BusinessException from '../config/exceptions/BusinessException.js';
-import NotFoundException from '../config/exceptions/NotFoundException.js';
-import { pipe } from '../config/utils/fp.js';
+import Game from '../../repository/Game.js';
+import User from '../../repository/User.js';
+import Round from '../../repository/Round.js';
+import BusinessException from '../../config/exceptions/BusinessException.js';
+import NotFoundException from '../../config/exceptions/NotFoundException.js';
+import { pipe } from '../../config/utils/fp.js';
 
 // ---------------------------------------------------------------------------
 // Funções auxiliares puras (sem efeitos colaterais)
