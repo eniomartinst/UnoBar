@@ -1,0 +1,89 @@
+.centerAreaContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.activeCardWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  25% {
+    transform: translateY(-40px) scale(1.1);
+  }
+
+  50% {
+    transform: translateY(0) scale(1);
+  }
+
+  75% {
+    transform: translateY(-15px) scale(1.05);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.jump {
+  animation: jump 0.5s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+.jumpDelay {
+  animation: jump 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.1s both;
+}
+
+.activeColorBadge {
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.activeColorDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: currentColor;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.drawDeck {
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.myTurnDeck {
+  cursor: pointer;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+}
+
+.myTurnDeck:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+}
