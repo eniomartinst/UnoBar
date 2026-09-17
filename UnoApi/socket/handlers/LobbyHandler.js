@@ -1,4 +1,4 @@
-import GameService from '../../service/GameService.js';
+import GameService from '../../service/game/GameService.js';
 import { formatManyGamesResponse } from '../../dtos/response/GameResponseDTO.js';
 
 export default function setupLobbyEvents(io, socket) {
