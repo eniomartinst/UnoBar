@@ -1,0 +1,83 @@
+.profileContainer {
+  display: flex;
+  align-items: center;
+}
+
+.profileContainer.vertical {
+  flex-direction: column;
+}
+
+.profileContainer.horizontalLeft {
+  flex-direction: row;
+  gap: 12px;
+}
+
+.profileContainer.horizontalRight {
+  flex-direction: row;
+  gap: 12px;
+}
+
+.infoWrapperVertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.infoWrapperHorizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.avatarWrapper {
+  border: 3px solid #3f3f46;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 5px rgba(0,0,0,0.5));
+}
+
+.avatarEmoji {
+  font-family: 'Liberation Sans', sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  color: black;
+}
+
+.nameWrapper {
+}
+
+.nameText {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  margin: 0;
+}
+
+.cardCountWrapper {
+  margin-top: 2px;
+}
+
+.cardCountBg {
+  background-color: #3f3f46;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.cardCountText {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16.5px;
+  color: white;
+  margin: 0;
+}
