@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap');
+
+/* -- Page ---------------------------------- */
+.page {
+  position: relative;
+  min-height: 100vh;
+  background: #0d0d0d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+  overflow: hidden;
+}
+
+/* -- Background Image & Overlay ------------ */
+.bgWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bgImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15; /* Transparent background */
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(13, 13, 13, 0), rgba(13,13,13,1));
+}
+
+/* -- Header -------------------------------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: rgba(13,13,13,0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #1a1a1a;
+}
+
+/* User info */
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.userInfo:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.userAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.userMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  text-align: right;
+}
+
+.userName {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ddd;
+  line-height: 1;
+}
+
+.userScore {
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Logo (header compact version) */
+.headerLogo {
+  display: flex;
+  gap: 0px;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -3px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.logoU { color: #b01e35; text-shadow: 2px 2px 0 #fff; }
+.logoN { color: #ead426; text-shadow: 2px 2px 0 #fff; }
+.logoO { color: #075ca9; text-shadow: 2px 2px 0 #fff; }
+
+/* Header Right Section */
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Settings dropdown */
+.settingsWrap {
+  position: relative;
+}
+
+.settingsDropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  min-width: 160px;
+  background: #181818;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  animation: dropIn 0.15s ease both;
+  z-index: 100;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dropdownTitle {
+  margin: 0 0 6px;
+  padding: 0 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dropdownItem {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #bbb;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdownItem:hover:not(:disabled) { background: #222; }
+.dropdownItem:disabled { color: #444; cursor: not-allowed; }
+
+
+
+/* -- Floating BG cards --------------------- */
+.bgCards {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgCard {
+  position: absolute;
+  width: 90px;
+  height: 130px;
+  border-radius: 12px;
+  background: var(--card-color);
+  opacity: 0.07;
+  filter: blur(2px);
+}
+
+.bgCard0 { top: -30px; left: 5%; transform: rotate(-18deg); animation: floatCard 8s ease-in-out infinite; }
+.bgCard1 { top: 20%; right: 4%; transform: rotate(22deg);   animation: floatCard 10s ease-in-out infinite 1.5s; }
+.bgCard2 { bottom: 10%; left: 3%; transform: rotate(12deg); animation: floatCard 9s ease-in-out infinite 3s; }
+.bgCard3 { bottom: -20px; right: 8%; transform: rotate(-8deg); animation: floatCard 11s ease-in-out infinite 0.5s; }
+
+@keyframes floatCard {
+  0%, 100% { transform: rotate(var(--r, -18deg)) translateY(0); }
+  50%       { transform: rotate(var(--r, -18deg)) translateY(-20px); }
+}
+
+/* -- Container ----------------------------- */
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 600px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  flex: 1;
+  justify-content: center;
+}
+
+/* -- Logo ---------------------------------- */
+
+.tagline {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #555;
+  margin: 0;
+}
+
+/* -- Tabs ---------------------------------- */
+.tabs {
+  display: flex;
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+  width: 100%;
+}
+
+.tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+  border-radius: 9px;
+  color: #555;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab:hover { color: #aaa; }
+
+.tabActive {
+  background: #252525;
+  color: #fff;
+}
+
+/* -- Panel --------------------------------- */
+.panel {
+  width: 100%;
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.tabContent {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* -- Room list ----------------------------- */
+.roomList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.roomItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 12px 14px;
+  transition: border-color 0.2s;
+}
+
+.roomItem:hover { border-color: #333; }
+
+.roomInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.roomId {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ddd;
+  letter-spacing: 1px;
+}
+
+.roomStatus {
+  font-size: 11px;
+  font-weight: 600;
+  color: #73aa2c;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.roomStatusBusy { color: #b01e35; }
+
+.roomSlots {
+  display: flex;
+  gap: 4px;
+}
+
+.slot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2a2a2a;
+  border: 1px solid #333;
+  transition: background 0.2s;
+}
+
+.slotFull  { background: #73aa2c; border-color: #73aa2c; }
+.slotYou   { background: #ead426; border-color: #ead426; }
+
+.enterBtn {
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #aaa;
+  padding: 7px 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.enterBtn:hover:not(:disabled) { border-color: #73aa2c; color: #73aa2c; }
+.enterBtn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+/* -- Create tab ---------------------------- */
+.createLabel {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.playerOptions {
+  display: flex;
+  gap: 10px;
+}
+
+.playerOpt {
+  flex: 1;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  color: #666;
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 16px 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.playerOpt:hover { border-color: #444; color: #aaa; }
+
+.playerOptActive {
+  border-color: #ead426;
+  color: #ead426;
+  background: #1f1c0a;
+}
+
+.createPreview {
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.previewLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.previewSlots {
+  display: flex;
+  gap: 10px;
+}
+
+.previewSlots .slot {
+  width: 14px;
+  height: 14px;
+}
+
+.previewYou {
+  font-size: 12px;
+  color: #ead426;
+  font-weight: 600;
+}
+
+.createBtn {
+  background: linear-gradient(135deg, #b01e35, #c4253e);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  width: 100%;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.1s;
+}
+
+.createBtn:hover  { filter: brightness(1.1); }
+.createBtn:active { transform: scale(0.98); }
