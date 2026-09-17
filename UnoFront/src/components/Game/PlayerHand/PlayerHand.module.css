@@ -1,0 +1,30 @@
+.playerHandContainer {
+  position: absolute;
+  bottom: 110px;
+  left: 50%;
+  transform: translateX(-50%) scale(1.6);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 140px;
+}
+
+.cardWrapper {
+  position: relative;
+  width: 70px;
+  height: 105px;
+  margin-left: -35px;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  transform-origin: bottom center;
+  transform: translateX(var(--card-x, 0px)) rotate(var(--card-rot)) translateY(calc(var(--card-y) + 70px));
+}
+
+.cardWrapper:first-child {
+  margin-left: 0;
+}
+
+.cardWrapper:hover {
+  transform: translateX(var(--card-x, 0px)) rotate(var(--card-rot)) translateY(calc(var(--card-y) + 45px)) scale(1.08) !important;
+  z-index: 200 !important;
+}
