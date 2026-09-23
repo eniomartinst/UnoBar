@@ -36,6 +36,8 @@ Para garantir uma experiência de jogo fluida e sem travamentos, a API foi const
 
 ## Como Executar Localmente
 
+
+
 ### Pré-requisitos
 *   Docker & Docker Compose
 *   Node.js (v18+)
