@@ -47,7 +47,7 @@
 
 .logoSection { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .logoBadge { display: flex; gap: 2px; font-size: 56px; font-weight: 900; line-height: 1; letter-spacing: -4px; }
-.logoU { color: #b01e35; text-shadow: 3px 3px 0 #fff; }
+.logoU { color: #7c3aed; text-shadow: 3px 3px 0 #fff; }
 .logoN { color: #ead426; text-shadow: 3px 3px 0 #fff; }
 .logoO { color: #075ca9; text-shadow: 3px 3px 0 #fff; }
 .tagline { font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #555; margin: 0; }
@@ -92,12 +92,12 @@
   margin: 0;
   font-size: 13px;
   font-weight: 600;
-  color: #b01e35;
+  color: #7c3aed;
   text-align: center;
 }
 
 .submitBtn {
-  background: linear-gradient(135deg, #b01e35, #c4253e);
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
   color: #fff;
   border: none;
   border-radius: 12px;
