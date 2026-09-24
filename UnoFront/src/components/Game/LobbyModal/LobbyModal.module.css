@@ -81,7 +81,7 @@
   text-transform: uppercase;
   cursor: pointer;
   width: 100%;
-  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.4);
+  box-shadow: 0 4px 12px rgba(100, 3, 179, 0.4);
   transition: transform 0.1s, filter 0.2s;
 }
 
