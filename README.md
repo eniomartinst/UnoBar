@@ -1,8 +1,8 @@
-# 🍻 UNO-BAR - Real-Time Multiplayer Card Game
+# UNO-BAR - Real-Time Multiplayer Card Game
 
 UNO-BAR é uma aplicação Full Stack de um jogo de cartas multiplayer em tempo real. Muito mais do que um jogo de navegador, este projeto foi desenvolvido com foco em **Alta Disponibilidade, WebSockets, Prevenção de Concorrência (Race Conditions) e Clean Architecture**.
 
-## 📸 Interface (ENIO Bar)
+## Interface (ENIO Bar)
 
 | Gameplay | Login |
 | :---: | :---: |
@@ -75,7 +75,7 @@ O projeto conta com uma suíte de testes E2E (End-to-End) automatizados constru�
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 **Ênio Martins**
 *Full Stack Developer*
